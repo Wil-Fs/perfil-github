@@ -1,0 +1,35 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    background-color: var(--pageColor);
+    color: var(--fontColor)
+}
+
+.container {
+    max-width: 960px;
+    width: 100%;
+    margin: 0 auto;
+    padding-top: 18px;
+    
+}
+
+.input {
+    border: none;
+    border-bottom: 2px solid var(--fontColor);
+    font-size: 18px;
+    padding: 0 20px
+}
+
+input:focus {
+    background-color: var(--headerColor);
+}
+
+:root {
+    --headerColor: #212027;
+     --listColor: #212027; /*594346 */
+     --pageColor: #594346; /* 212027 */
+    --linkColor:#594346;
+    --fontColor: #f22f08;
+}
