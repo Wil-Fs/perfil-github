@@ -6,6 +6,7 @@ const ReposList = ({ userName }) => {
     const [repos, setRepos] = useState([]);
     const [loading, setLoading] = useState(true);
 
+
     useEffect(() => {
         setLoading(true);
         fetch(`https://api.github.com/users/${userName}/repos`) // requisição de repositórios do github
@@ -17,9 +18,15 @@ const ReposList = ({ userName }) => {
                 }, 3000);
             })
     }, [userName])
-
+        console.log(repos)
     return (
-        <div className="container">
+        <>
+            {
+                repos.message === "Not Found" ? 
+                (
+                    <h1>Erro de requisição, digite um usuário valido!</h1>
+                ) :
+                <div className="container">
             {
                 loading ? <h3>Loading...</h3> :
                     (
@@ -41,6 +48,8 @@ const ReposList = ({ userName }) => {
                     )
             }
         </div>
+            }
+        </>
     )
 }
 
